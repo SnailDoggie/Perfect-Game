@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bwwq8uq2ms2vc"]
+[gd_scene load_steps=28 format=3 uid="uid://bwwq8uq2ms2vc"]
 
 [ext_resource type="PackedScene" uid="uid://chjbaavo7ayj2" path="res://Jimothy.tscn" id="1_7a7sv"]
 [ext_resource type="PackedScene" uid="uid://sjusf8f372uw" path="res://background.tscn" id="2_q4ouy"]
 [ext_resource type="PackedScene" uid="uid://be8itmjst4uo" path="res://karen 2.tscn" id="3_rknu5"]
+[ext_resource type="Texture2D" uid="uid://b0uuibmlqp7b7" path="res://ClassicCheeseBurger_9.jpg" id="4_x2b2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7sv"]
 size = Vector2(8151.76, 220.193)
@@ -249,5 +250,10 @@ texture = SubResource("GradientTexture2D_x2b2w")
 
 [node name="Karen4" parent="." instance=ExtResource("3_rknu5")]
 position = Vector2(4623, 465)
+
+[node name="ClassicCheeseBurger9" type="Sprite2D" parent="."]
+position = Vector2(7672, 404)
+scale = Vector2(0.503333, 0.306667)
+texture = ExtResource("4_x2b2w")
 
 [connection signal="body_entered" from="Dump" to="Dump" method="_on_body_entered"]
