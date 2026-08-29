@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8itmjst4uo"]
+
+[ext_resource type="Texture2D" uid="uid://crf2fprw7k5bi" path="res://pixil-frame-0 (2).png" id="1_x1fib"]
+
+[sub_resource type="GDScript" id="GDScript_t54cs"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file(\"res://start_screen.tscn\")
+"
+
+[node name="Karen" type="Area2D"]
+scale = Vector2(1.96, 1.76)
+script = SubResource("GDScript_t54cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34, 24)
+scale = Vector2(1.28, 1.36)
+texture = ExtResource("1_x1fib")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(34, 24)
+scale = Vector2(1.28, 1.36)
+polygon = PackedVector2Array(-20.5, -25.5, -20.5, -23.7, -21.7, -22.5, -23.5, -22.5, -23.5, -11.5, -20.7, -11.5, -21.7, -10.5, -23.5, -10.5, -23.5, 2.5, -21.5, 2.5, -21.5, 16.5, -15.5, 16.5, -15.5, 9.5, -14.5, 9.5, -14.5, 16.5, -8.5, 16.5, -8.5, 2.5, -6.5, 2.5, -6.5, -9.9, -9.6, -11.5, -6.5, -11.5, -6.5, -21.8, -9.5, -23.8, -9.5, -25.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

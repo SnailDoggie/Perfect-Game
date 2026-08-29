@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bwwq8uq2ms2vc"]
+[gd_scene load_steps=27 format=3 uid="uid://bwwq8uq2ms2vc"]
 
 [ext_resource type="PackedScene" uid="uid://chjbaavo7ayj2" path="res://Jimothy.tscn" id="1_7a7sv"]
 [ext_resource type="PackedScene" uid="uid://sjusf8f372uw" path="res://background.tscn" id="2_q4ouy"]
+[ext_resource type="PackedScene" uid="uid://be8itmjst4uo" path="res://karen 2.tscn" id="3_rknu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7sv"]
 size = Vector2(8151.76, 220.193)
@@ -77,6 +78,11 @@ func _on_body_entered(body: Node2D) -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqef2"]
 size = Vector2(465, 266)
+
+[sub_resource type="Gradient" id="Gradient_rknu5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x2b2w"]
+gradient = SubResource("Gradient_rknu5")
 
 [node name="Perfect Game" type="Node2D"]
 
@@ -200,5 +206,48 @@ script = SubResource("GDScript_q4ouy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dump"]
 position = Vector2(7783.5, 407)
 shape = SubResource("RectangleShape2D_qqef2")
+
+[node name="Karen" parent="." instance=ExtResource("3_rknu5")]
+position = Vector2(882, 459)
+
+[node name="Karen2" parent="." instance=ExtResource("3_rknu5")]
+position = Vector2(1714, 457)
+
+[node name="Karen3" parent="." instance=ExtResource("3_rknu5")]
+position = Vector2(3877, 459)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 824.0
+offset_top = 547.0
+offset_right = 1017.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Avoid the karens!"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0.586577, 0.987083, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2824, 291)
+rotation = -1.06991
+scale = Vector2(52.5, 5.96762)
+texture = SubResource("GradientTexture2D_x2b2w")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1969, 156)
+rotation = -1.06991
+scale = Vector2(52.5, 2.8394)
+texture = SubResource("GradientTexture2D_x2b2w")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(3806, 533)
+rotation = -1.06991
+scale = Vector2(52.5, 2.8394)
+texture = SubResource("GradientTexture2D_x2b2w")
+
+[node name="Karen4" parent="." instance=ExtResource("3_rknu5")]
+position = Vector2(4623, 465)
 
 [connection signal="body_entered" from="Dump" to="Dump" method="_on_body_entered"]

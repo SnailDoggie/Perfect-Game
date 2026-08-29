@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c08kurjliyaok"]
 
-[ext_resource type="Texture2D" path="res://Buildings/heck.png" id="1_my301"]
+[ext_resource type="Texture2D" uid="uid://toec0caauwd7" path="res://heck.png" id="1_my301"]
 
 [node name="End Screen" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1157.0
-offset_bottom = 651.0
+offset_right = 1165.0
+offset_bottom = 650.0
 texture = ExtResource("1_my301")
