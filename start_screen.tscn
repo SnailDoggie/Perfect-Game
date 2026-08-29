@@ -23,5 +23,18 @@ offset_right = 908.0
 offset_bottom = 82.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 53
 text = "JIMOTHY'S PERFECT DAY"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 210.0
+offset_right = 384.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 53
+text = "START"
