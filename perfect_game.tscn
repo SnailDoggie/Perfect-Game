@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwwq8uq2ms2vc"]
+[gd_scene load_steps=6 format=3 uid="uid://bwwq8uq2ms2vc"]
 
 [ext_resource type="PackedScene" uid="uid://chjbaavo7ayj2" path="res://Jimothy.tscn" id="1_7a7sv"]
+[ext_resource type="PackedScene" path="res://background.tscn" id="2_q4ouy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7sv"]
 size = Vector2(549.047, 20)
@@ -17,6 +18,7 @@ collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(189, 184)
+position_smoothing_enabled = true
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 collision_layer = 3
@@ -41,3 +43,7 @@ offset_top = 160.0
 offset_right = 367.0
 offset_bottom = 200.0
 texture = SubResource("CanvasTexture_7a7sv")
+
+[node name="Node2D" parent="." instance=ExtResource("2_q4ouy")]
+z_index = -4
+position = Vector2(205, 311)
