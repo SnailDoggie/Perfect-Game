@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://chjbaavo7ayj2"]
+[gd_scene format=3 uid="uid://chjbaavo7ayj2"]
 
 [ext_resource type="Script" uid="uid://de7ea57p4jsto" path="res://jimothy.gd" id="1_crdjd"]
 [ext_resource type="Texture2D" uid="uid://cejhpqbd653ma" path="res://cfr2f894cb9481aws3.png" id="2_x5yml"]
