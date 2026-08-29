@@ -1,3 +1,43 @@
-[gd_scene format=3 uid="uid://bwwq8uq2ms2vc"]
+[gd_scene load_steps=5 format=3 uid="uid://bwwq8uq2ms2vc"]
+
+[ext_resource type="PackedScene" uid="uid://chjbaavo7ayj2" path="res://Jimothy.tscn" id="1_7a7sv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7sv"]
+size = Vector2(549.047, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q4ouy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7a7sv"]
 
 [node name="Perfect Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_7a7sv")]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(189, 184)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(284, 333)
+scale = Vector2(1.20293, 1.32735)
+shape = SubResource("RectangleShape2D_7a7sv")
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+offset_left = -27.0
+offset_top = 324.0
+offset_right = 13.0
+offset_bottom = 364.0
+scale = Vector2(15.729, 0.36)
+texture = SubResource("CanvasTexture_q4ouy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 327.0
+offset_top = 160.0
+offset_right = 367.0
+offset_bottom = 200.0
+texture = SubResource("CanvasTexture_7a7sv")
