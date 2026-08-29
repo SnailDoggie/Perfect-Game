@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://chadyiom0mi2a"]
+
+[ext_resource type="Texture2D" uid="uid://cl8yrid125c3" path="res://screenshot-2026-07-31-at-112053-am_3835.webp" id="1_ncxyx"]
+
+[sub_resource type="Theme" id="Theme_pevhg"]
+
+[node name="Start Screen" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -395.0
+offset_top = -376.0
+offset_right = 565.0
+offset_bottom = 264.0
+scale = Vector2(2.02004, 2.05115)
+theme = SubResource("Theme_pevhg")
+texture = ExtResource("1_ncxyx")
+
+[node name="Label" type="Label" parent="."]
+z_index = 8
+offset_left = 292.0
+offset_top = 9.0
+offset_right = 908.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 53
+text = "JIMOTHY'S PERFECT DAY"
