@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpl1sakm6uuqg"]
+
+[ext_resource type="Script" path="res://karen.gd" id="1_oj5iy"]
+[ext_resource type="Texture2D" path="res://Buildings/pixil-frame-0 (2).png" id="2_g70ad"]
+
+[node name="Karen" type="Area2D"]
+script = ExtResource("1_oj5iy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(292, 195)
+scale = Vector2(2.2, 2.38)
+texture = ExtResource("2_g70ad")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(292, 195)
+scale = Vector2(2.2, 2.38)
+polygon = PackedVector2Array(-20.5, -25.5, -20.5, -23.7, -21.7, -22.5, -23.5, -22.5, -23.5, -11.5, -20.7, -11.5, -21.7, -10.5, -23.5, -10.5, -23.5, 2.5, -21.5, 2.5, -21.5, 16.5, -15.5, 16.5, -15.5, 9.5, -14.5, 9.5, -14.5, 16.5, -8.5, 16.5, -8.5, 2.5, -6.5, 2.5, -6.5, -9.9, -9.6, -11.5, -6.5, -11.5, -6.5, -21.8, -9.5, -23.8, -9.5, -25.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bwwq8uq2ms2vc"]
+[gd_scene load_steps=24 format=3 uid="uid://bwwq8uq2ms2vc"]
 
 [ext_resource type="PackedScene" uid="uid://chjbaavo7ayj2" path="res://Jimothy.tscn" id="1_7a7sv"]
 [ext_resource type="PackedScene" uid="uid://sjusf8f372uw" path="res://background.tscn" id="2_q4ouy"]
@@ -57,6 +57,27 @@ size = Vector2(8.46256, 15.362)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krqgy"]
 size = Vector2(13.5131, 5.1905)
 
+[sub_resource type="GDScript" id="GDScript_q4ouy"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file(\"res://end_screen.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqef2"]
+size = Vector2(465, 266)
+
 [node name="Perfect Game" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_7a7sv")]
@@ -111,7 +132,6 @@ shape = SubResource("RectangleShape2D_q4ouy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-6.21495, -93.8907)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rknu5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -121,7 +141,6 @@ shape = SubResource("RectangleShape2D_x2b2w")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-10.2351, -133.067)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2vwu2")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
@@ -133,55 +152,53 @@ shape = SubResource("RectangleShape2D_10eom")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-4.24634, -178.671)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mknfk")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-8.67626, -260.777)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2ounl")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.57568, -213.794)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kualc")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-8.84919, -297.227)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_52vp0")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.15724, -333.644)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t23hq")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.62761, -354.498)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x5tw4")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.04586, -405.318)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_st4ui")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-10.0934, -450.939)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hlr3h")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.5521, -487.352)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_di3c3")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-8.96933, -538.209)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ei613")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-11.6911, -559.079)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_krqgy")
+
+[node name="Dump" type="Area2D" parent="."]
+script = SubResource("GDScript_q4ouy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dump"]
+position = Vector2(7783.5, 407)
+shape = SubResource("RectangleShape2D_qqef2")
+
+[connection signal="body_entered" from="Dump" to="Dump" method="_on_body_entered"]
